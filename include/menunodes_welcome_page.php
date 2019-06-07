@@ -54,5 +54,30 @@ function getMenuNodes_welcome_page($menuNodesObject)
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
+	$menuNode = array();
+	$menuNode["id"] = "3";
+	$menuNode["name"] = "";
+	$menuNode["href"] = "mypage.htm";
+	$menuNode["type"] = "Leaf";
+	$menuNode["table"] = "pings";
+	$menuNode["style"] = "";
+	$menuNode["params"] = "";
+	$menuNode["parent"] = "1";
+	$menuNode["nameType"] = "Text";
+	$menuNode["linkType"] = "Internal";
+	$menuNode["pageType"] = "List";//
+	$menuNode["openType"] = "None";
+	
+	$menuNode["icon"] = "glyphicon-hand-right";
+	$menuNode["iconType"] = "2";
+
+			$menuNode["color"] = "#"."D2AF80";
+	
+	$menuNode["title"] = "Pings";
+
+	$menuNode["comments"] = "Lista pings do servidor";
+
+
+	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
 }
 ?>

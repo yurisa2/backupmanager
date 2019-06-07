@@ -52,6 +52,7 @@ class tDAL
 	var $tblbackup_db__backupviewer_ugmembers;
 	var $tblbackup_db__backupviewer_ugrights;
 	var $tblbackup_db__backupviewer_users;
+	var $tblbackup_db__pings;
 	var $lstTables;
 	var $Table = array();
 
@@ -64,6 +65,7 @@ class tDAL
 		$this->lstTables[] = array("name" => "backupviewer_ugmembers", "varname" => "backup_db__backupviewer_ugmembers", "altvarname" => "backupviewer_ugmembers", "connId" => "backup_db", "schema" => "", "connName" => "backupmanager at backupmanager.mysql.dbaas.com.br");
 		$this->lstTables[] = array("name" => "backupviewer_ugrights", "varname" => "backup_db__backupviewer_ugrights", "altvarname" => "backupviewer_ugrights", "connId" => "backup_db", "schema" => "", "connName" => "backupmanager at backupmanager.mysql.dbaas.com.br");
 		$this->lstTables[] = array("name" => "backupviewer_users", "varname" => "backup_db__backupviewer_users", "altvarname" => "backupviewer_users", "connId" => "backup_db", "schema" => "", "connName" => "backupmanager at backupmanager.mysql.dbaas.com.br");
+		$this->lstTables[] = array("name" => "pings", "varname" => "backup_db__pings", "altvarname" => "pings", "connId" => "backup_db", "schema" => "", "connName" => "backupmanager at backupmanager.mysql.dbaas.com.br");
 	}
 
 	/**

@@ -17,6 +17,7 @@ if(!IsAdmin())
 $nonAdminTablesArr = array();
 $nonAdminTablesArr[] = "backups";
 $nonAdminTablesArr[] = "backupviewer_users";
+$nonAdminTablesArr[] = "pings";
 
 $ug_connection = $cman->getForUserGroups();
 

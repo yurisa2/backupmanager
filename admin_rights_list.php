@@ -26,6 +26,14 @@ $mask="";
 			
 $pageMask[$table] = $mask;
 $tables[$table] = array("backupviewer_users", " " . "Backupviewer Users");
+$table = "pings";
+$mask="";
+				$mask .= "S";
+$mask .= "P";
+$mask .= "M";
+
+$pageMask[$table] = $mask;
+$tables[$table] = array("pings", " " . "Pings");
 
 
 

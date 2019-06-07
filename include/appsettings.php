@@ -532,6 +532,7 @@ $tableCaptions["Portuguese(Brazil)"]["admin_rights"] = "Admin Rights";
 $tableCaptions["Portuguese(Brazil)"]["backupviewer_users"] = "Backupviewer Users";
 $tableCaptions["Portuguese(Brazil)"]["admin_members"] = "Admin Members";
 $tableCaptions["Portuguese(Brazil)"]["admin_users"] = "Add/Edit users";
+$tableCaptions["Portuguese(Brazil)"]["pings"] = "Pings";
 $tableCaptions[""] = array();
 $tableCaptions[""][""] = "";
 $tableCaptions[""]["backups"] = "Backups";
@@ -539,6 +540,7 @@ $tableCaptions[""]["admin_rights"] = "Admin Rights";
 $tableCaptions[""]["backupviewer_users"] = "Backupviewer Users";
 $tableCaptions[""]["admin_members"] = "Admin Members";
 $tableCaptions[""]["admin_users"] = "Admin Users";
+$tableCaptions[""]["pings"] = "Pings";
 
 
 $globalEvents = new class_GlobalEvents;

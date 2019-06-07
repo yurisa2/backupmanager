@@ -281,6 +281,7 @@ class ConnectionManager
 		$connectionsIds["backupviewer_users"] = "backup_db";
 		$connectionsIds["admin_members"] = "backup_db";
 		$connectionsIds["admin_users"] = "backup_db";
+		$connectionsIds["pings"] = "backup_db";
 		$this->_tablesConnectionIds = $connectionsIds;
 	}
 	

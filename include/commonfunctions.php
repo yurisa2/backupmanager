@@ -279,6 +279,8 @@ function checkTableName($shortTName, $type=false)
 		return true;
 	if ("admin_users" == $shortTName && ($type===false || ($type!==false && $type == 1)))
 		return true;
+	if ("pings" == $shortTName && ($type===false || ($type!==false && $type == 0)))
+		return true;
 	return false;
 }
 
@@ -352,6 +354,11 @@ function GetTablesList($pdfMode = false)
 	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
 	{
 		$arr[]="admin_users";
+	}
+	$strPerm = GetUserPermissions("pings");
+	if(strpos($strPerm, "P")!==false || ($pdfMode && strpos($strPerm, "S")!==false))
+	{
+		$arr[]="pings";
 	}
 	return $arr;
 }
@@ -1059,6 +1066,8 @@ function guestHasPermissions()
 		return true;
 	if(array_key_exists("admin_users",$_SESSION["UserRights"]["Guest"]))
 		return true;
+	if(array_key_exists("pings",$_SESSION["UserRights"]["Guest"]))
+		return true;
 	return false;
 }
 
@@ -1187,6 +1196,8 @@ function SetAuthSessionData($pUsername, &$data, $fromFacebook, $password, &$page
 	$_SESSION["GroupID"] = $data["groupid"];
 
 
+		$_SESSION["OwnerID"] = $data["username"];
+	$_SESSION["_pings_OwnerID"] = $data["username"];
 	if($globalEvents->exists("AfterSuccessfulLogin"))
 	{
 		$globalEvents->AfterSuccessfulLogin($pUsername != "Guest" ? $pUsername : "", $password, $data, $pageObject);
@@ -1237,6 +1248,12 @@ function CheckSecurity($strValue, $strAction, $table = "")
 	$strPerm = GetUserPermissions();
 	if( strpos($strPerm, "M") === false )
 	{
+		if($table=="pings")
+		{
+
+				if(!($pSet->getCaseSensitiveUsername((string)$_SESSION["_".$table."_OwnerID"])===$pSet->getCaseSensitiveUsername((string)$strValue)))
+				return false;
+		}
 	}
 	//	 check user group permissions
 	$localAction = strtolower($strAction);
@@ -1307,6 +1324,10 @@ function SecuritySQL($strAction, $table="", $strPerm="")
 
 	if(strpos($strPerm,"M")===false)
 	{
+		if($table=="pings")
+		{
+				$ret = GetFullFieldName($pSet->getTableOwnerID(), $table, false)."=".make_db_value($pSet->getTableOwnerID(), $ownerid, "", "", $table);
+		}
 	}
 
 	if($strAction=="Edit" && !(strpos($strPerm, "E")===false) ||

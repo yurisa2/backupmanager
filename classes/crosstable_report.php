@@ -1278,6 +1278,8 @@ class CrossTableReport
 			$isDB = true;
 		if("backupviewer_users" == $this->xml_array['tables'][0])
 			$isDB = true;
+		if("pings" == $this->xml_array['tables'][0])
+			$isDB = true;
 		return $isDB;
 	}
 	
