@@ -428,19 +428,6 @@
 									
 									
 									
-									{BEGIN update_fieldheadercolumn}
-									<th class="rnr-gridfieldlabel {$update_class}">
-									{BEGIN update_fieldheader}
-																				<span {$update_orderlinkattrs}>
-											{$label backups update}
-										</span>
-									{END update_fieldheader}
-									</th>
-									{END update_fieldheadercolumn}
-									
-									
-									
-									
 									{BEGIN endrecordheader_block}
 									<th class="rnr-cs">&nbsp;</th>
 									
@@ -510,13 +497,6 @@
 		{$longdata_value}
 	</td>
 {END longdata_fieldcolumn}
-
-
-	{BEGIN update_fieldcolumn}
-	<td class="bs-gridcell {$update_class}" {$update_style} data-field=update>
-		{$update_value}
-	</td>
-{END update_fieldcolumn}
 
 	<!--<td class="rnr-edge" {$recordattrs}>&nbsp;</td>-->
 	{BEGIN endrecord_block}

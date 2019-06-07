@@ -102,11 +102,6 @@
 				{$label backups longdata}
 			</th>
 			{END longdata_fieldheadercolumn}
-			{BEGIN update_fieldheadercolumn}
-			<th class="{$update_class}" {$update_style}>
-				{$label backups update}
-			</th>
-			{END update_fieldheadercolumn}
 			{BEGIN endrecordheader_block}
 			<th class="rnr-cs">&nbsp;</th>
 			{END endrecordheader_block}
@@ -139,11 +134,6 @@
 				{$longdata_value}
 			</td>
 			{END longdata_fieldcolumn}
-			{BEGIN update_fieldcolumn}
-			<td  class="{$update_class}" {$update_style} {$recordattrs}>
-				{$update_value}
-			</td>
-			{END update_fieldcolumn}
 			{BEGIN endrecord_block}
 			<td class="rnr-cs" {$endrecordblock_attrs}>&nbsp;</td>
 			{END endrecord_block}

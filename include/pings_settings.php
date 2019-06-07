@@ -183,14 +183,15 @@ $tdatapings[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "";
+$tstrOrderBy = "ORDER BY `date` DESC";
 if(strlen($tstrOrderBy) && strtolower(substr($tstrOrderBy,0,8))!="order by")
 	$tstrOrderBy = "order by ".$tstrOrderBy;
 $tdatapings[".strOrderBy"] = $tstrOrderBy;
 
 $tdatapings[".orderindexes"] = array();
+$tdatapings[".orderindexes"][] = array(2, (0 ? "ASC" : "DESC"), "`date`");
 
-$tdatapings[".sqlHead"] = "SELECT id_ping,  	`date`,  	obs,  	`user`";
+$tdatapings[".sqlHead"] = "SELECT id_ping,  `date`,  obs,  `user`";
 $tdatapings[".sqlFrom"] = "FROM pings";
 $tdatapings[".sqlWhereExpr"] = "";
 $tdatapings[".sqlTail"] = "";
@@ -427,7 +428,7 @@ $tdatapings[".printFields"][] = "user";
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 
-	$vdata = array("ViewFormat" => "Short Date");
+	$vdata = array("ViewFormat" => "Datetime");
 
 	
 	
@@ -780,10 +781,10 @@ function createSqlQuery_pings()
 {
 $proto0=array();
 $proto0["m_strHead"] = "SELECT";
-$proto0["m_strFieldList"] = "id_ping,  	`date`,  	obs,  	`user`";
+$proto0["m_strFieldList"] = "id_ping,  `date`,  obs,  `user`";
 $proto0["m_strFrom"] = "FROM pings";
 $proto0["m_strWhere"] = "";
-$proto0["m_strOrderBy"] = "";
+$proto0["m_strOrderBy"] = "ORDER BY `date` DESC";
 $proto0["m_strTail"] = "";
 	
 		;
@@ -915,6 +916,19 @@ $obj = new SQLFromListItem($proto14);
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
+												$proto18=array();
+						$obj = new SQLField(array(
+	"m_strName" => "date",
+	"m_strTable" => "pings",
+	"m_srcTableName" => "pings"
+));
+
+$proto18["m_column"]=$obj;
+$proto18["m_bAsc"] = 0;
+$proto18["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto18);
+
+$proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="pings";		
 $obj = new SQLQuery($proto0);
 

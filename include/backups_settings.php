@@ -148,7 +148,6 @@ $tdatabackups[".allSearchFields"][] = "label";
 	$tdatabackups[".allSearchFields"][] = "date";
 	$tdatabackups[".allSearchFields"][] = "obs";
 	$tdatabackups[".allSearchFields"][] = "longdata";
-	$tdatabackups[".allSearchFields"][] = "update";
 	
 
 $tdatabackups[".googleLikeFields"] = array();
@@ -204,12 +203,13 @@ $tdatabackups[".warnLeavingPages"] = true;
 
 
 
-$tstrOrderBy = "";
+$tstrOrderBy = "ORDER BY `date` DESC";
 if(strlen($tstrOrderBy) && strtolower(substr($tstrOrderBy,0,8))!="order by")
 	$tstrOrderBy = "order by ".$tstrOrderBy;
 $tdatabackups[".strOrderBy"] = $tstrOrderBy;
 
 $tdatabackups[".orderindexes"] = array();
+$tdatabackups[".orderindexes"][] = array(3, (0 ? "ASC" : "DESC"), "`date`");
 
 $tdatabackups[".sqlHead"] = "SELECT id_bkp,  `label`,  `date`,  obs,  longdata,  `update`,  `user`";
 $tdatabackups[".sqlFrom"] = "FROM backups";
@@ -259,7 +259,6 @@ $tdatabackups[".listFields"][] = "label";
 $tdatabackups[".listFields"][] = "date";
 $tdatabackups[".listFields"][] = "obs";
 $tdatabackups[".listFields"][] = "longdata";
-$tdatabackups[".listFields"][] = "update";
 
 $tdatabackups[".hideMobileList"] = array();
 
@@ -269,7 +268,6 @@ $tdatabackups[".viewFields"][] = "label";
 $tdatabackups[".viewFields"][] = "date";
 $tdatabackups[".viewFields"][] = "obs";
 $tdatabackups[".viewFields"][] = "longdata";
-$tdatabackups[".viewFields"][] = "update";
 
 $tdatabackups[".addFields"] = array();
 
@@ -291,14 +289,12 @@ $tdatabackups[".inlineEditFields"][] = "label";
 $tdatabackups[".inlineEditFields"][] = "date";
 $tdatabackups[".inlineEditFields"][] = "obs";
 $tdatabackups[".inlineEditFields"][] = "longdata";
-$tdatabackups[".inlineEditFields"][] = "update";
 
 $tdatabackups[".exportFields"] = array();
 $tdatabackups[".exportFields"][] = "label";
 $tdatabackups[".exportFields"][] = "date";
 $tdatabackups[".exportFields"][] = "obs";
 $tdatabackups[".exportFields"][] = "longdata";
-$tdatabackups[".exportFields"][] = "update";
 
 $tdatabackups[".importFields"] = array();
 
@@ -307,7 +303,6 @@ $tdatabackups[".printFields"][] = "label";
 $tdatabackups[".printFields"][] = "date";
 $tdatabackups[".printFields"][] = "obs";
 $tdatabackups[".printFields"][] = "longdata";
-$tdatabackups[".printFields"][] = "update";
 
 //	id_bkp
 //	Custom field settings
@@ -587,7 +582,7 @@ $tdatabackups[".printFields"][] = "update";
 //  Begin View Formats
 	$fdata["ViewFormats"] = array();
 
-	$vdata = array("ViewFormat" => "Short Date");
+	$vdata = array("ViewFormat" => "Datetime");
 
 	
 	
@@ -923,21 +918,15 @@ $tdatabackups[".printFields"][] = "update";
 	
 	
 	
-		$fdata["bListPage"] = true;
-
 	
 	
 	
-		$fdata["bInlineEdit"] = true;
-
-		$fdata["bViewPage"] = true;
-
-		$fdata["bAdvancedSearch"] = true;
-
-		$fdata["bPrinterPage"] = true;
-
-		$fdata["bExportPage"] = true;
-
+	
+	
+	
+	
+	
+	
 		$fdata["strField"] = "update";
 
 		$fdata["isSQLExpression"] = true;
@@ -945,8 +934,7 @@ $tdatabackups[".printFields"][] = "update";
 
 	
 	
-				$fdata["FieldPermissions"] = true;
-
+			
 				$fdata["UploadFolder"] = "files";
 
 //  Begin View Formats
@@ -1022,11 +1010,6 @@ $tdatabackups[".printFields"][] = "update";
 
 
 
-// the field's search options settings
-	
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Equals", "More than", "Less than", "Between", "Empty");
-// the end of search options settings
 
 
 
@@ -1177,7 +1160,7 @@ $proto0["m_strHead"] = "SELECT";
 $proto0["m_strFieldList"] = "id_bkp,  `label`,  `date`,  obs,  longdata,  `update`,  `user`";
 $proto0["m_strFrom"] = "FROM backups";
 $proto0["m_strWhere"] = "";
-$proto0["m_strOrderBy"] = "";
+$proto0["m_strOrderBy"] = "ORDER BY `date` DESC";
 $proto0["m_strTail"] = "";
 	
 		;
@@ -1354,6 +1337,19 @@ $obj = new SQLFromListItem($proto20);
 $proto0["m_fromlist"][]=$obj;
 $proto0["m_groupby"] = array();
 $proto0["m_orderby"] = array();
+												$proto24=array();
+						$obj = new SQLField(array(
+	"m_strName" => "date",
+	"m_strTable" => "backups",
+	"m_srcTableName" => "backups"
+));
+
+$proto24["m_column"]=$obj;
+$proto24["m_bAsc"] = 0;
+$proto24["m_nColumn"] = 0;
+$obj = new SQLOrderByItem($proto24);
+
+$proto0["m_orderby"][]=$obj;					
 $proto0["m_srcTableName"]="backups";		
 $obj = new SQLQuery($proto0);
 

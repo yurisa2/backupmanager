@@ -1,240 +1,145 @@
-<!doctype html>
-<html  {$html_attrs}>
-	<head>
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>{$pagetitle}</title>
-
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link REL="stylesheet" href="styles/default.css" type="text/css">
-		{BEGIN rtlCSS}
-		<link REL="stylesheet" href="styles/defaultRTL.css" type="text/css">
-		{END rtlCSS}
-		{BEGIN styleCSSFiles}
-		<link REL="stylesheet" href="{$stylepath}" type="text/css">
-		{END styleCSSFiles}
-		{BEGIN pageCSSFiles}
-		<link REL="stylesheet" href="{$pagestylepath}" type="text/css">
-		{END pageCSSFiles}
-	</head>
-
-	<body class="{$stylename} function-login" {$bodyattrs}>
-	{BEGIN body}
-		{$header}
-		<style>
-			{$containerCss}
-		</style>
-		<DIV class="bs-top">
-        
-
-{BEGIN container_page}
-<div {$page_chiddenattr} data-pageid="{$pageid}" data-container="page" class="container    "> 
-
-
-
-
-{BEGIN container_page_1}
-<div {$page_1_chiddenattr} data-pageid="{$pageid}" data-container="page_1" class=" bs-standalone-page  col-md-6 col-md-offset-3"> 
-
-
-
-
-{BEGIN container_panel}
-<div {$panel_chiddenattr} data-pageid="{$pageid}" data-container="panel" class=" bs-pagepanel panel panel-primary   "> 
-
-
-
-
-{BEGIN container_header}
-<div {$header_chiddenattr} data-pageid="{$pageid}" data-container="header" class=" panel-heading   "> 
-
-{BEGIN loginheader}
-<h3 class="panel-title" {$loginheader_hiddenattr} data-pageid="{$pageid}" data-brick="loginheader" >
-
-	{$pagetitlelabel  login}
-</h3>
-
-{END loginheader}
-
-
-
-</div>
-{END container_header}
-
-
-
-
-
-
-
-
-{BEGIN container_body}
-<div {$body_chiddenattr} data-pageid="{$pageid}" data-container="body" class=" panel-body   "> 
-
-
-
-
-{BEGIN container_header_1}
-<div {$header_1_chiddenattr} data-pageid="{$pageid}" data-container="header_1" class="   col-md-12 "> 
-
-{BEGIN message_block}
-<div {$message_hiddenattr} data-pageid="{$pageid}" data-brick="message" class="alert {$message_class}" role="alert">{$message}</div>
-{END message_block}
-
-
-
-</div>
-{END container_header_1}
-
-
-
-
-
-
-
-
-{BEGIN container_fields}
-<div {$fields_chiddenattr} data-pageid="{$pageid}" data-container="fields" class="   col-md-12 "> 
-
-
-<div {$loginfields_hiddenattr} data-pageid="{$pageid}" data-brick="loginfields" class="form-horizontal" role="form">
-	<div class="form-group" >
-		<label class="col-md-4 control-label" for="username">
-			{BEGIN username_label}Nome do Usuário:{END username_label}
-		</label>
-		<div class="col-md-6" >
-			<input type="text" class="form-control" name="username" {$username_attrs} id="username">
-		</div>
-	</div>
-	<div class="form-group" >
-		<label class="col-md-4 control-label" for="password">
-			{BEGIN password_label}Senha:{END password_label}
-		</label>
-		<div class="col-md-6" >
-			<input type="password" class="form-control" name="password" {$password_attrs} id="password">
-		</div>
-	</div>
-	<div class="form-group" >
-		<div class="col-md-6 col-md-offset-4" >
-			<div class="checkbox">
-				<label>
-					<input type="checkbox" {$rememberbox_attrs}> {BEGIN remember_password_label}<span></span>{END remember_password_label}
-				</label>
-			</div>
-		</div>
-	</div>
-	
-</div>
-
-
-
-
-
-
-</div>
-{END container_fields}
-
-
-
-
-
-
-
-
-{BEGIN container_header_2}
-<div {$header_2_chiddenattr} data-pageid="{$pageid}" data-container="header_2" class="   col-md-8 col-md-offset-4"> 
-
-{BEGIN loginbuttons}
-<button class="btn btn-primary" {$loginlink_attrs}></button>
-{BEGIN continue_button}
-<button class="btn btn-primary" {$continuebutton_attrs}>Continuar</button>
-{END continue_button}
-
-{BEGIN guestlink_block}
-<div class="btn btn-link"><a {$guestlink_attrs} >Logar como Convidado</a></div>
-{END guestlink_block}
-
-
-{END loginbuttons}
-
-
-
-</div>
-{END container_header_2}
-
-
-
-
-
-
-</div>
-{END container_body}
-
-
-
-
-
-
-</div>
-{END container_panel}
-
-
-
-
-
-
-
-
-{BEGIN container_register}
-<div {$register_chiddenattr} data-pageid="{$pageid}" data-container="register" class="  text-center col-md-12 "> 
-
-
-<span {$bsloginregister_hiddenattr} data-pageid="{$pageid}" data-brick="bsloginregister">
-</span>
-
-
-
-
-
-</div>
-{END container_register}
-
-
-
-
-
-
-</div>
-{END container_page_1}
-
-
-
-
-
-
-</div>
-{END container_page}
-
-
-		</div>
-		<div class="bs-middle ">
-			<div class="bs-topmiddle">
-				
-			</div>
-			<div class="bs-left" {$blockattr_left}>
-				
-			</div>
-			<div class="bs-center">
-				
-			</div>
-			<div class="bs-right">
-				
-			</div>
-		</div>
-		<DIV class="bs-bottom">
-        
-		</div>
-		{$footer}
-	{END body}
-	</body>
-</html>
+<!DOCTYPE html>
+<HTML {$html_attrs}>
+  <HEAD>
+    <META http-equiv="X-UA-Compatible" content="IE=Edge">
+    <META name="viewport" content="width=device-width, initial-scale=1.0">
+    <TITLE>
+      {$pagetitle}
+    </TITLE>
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <LINK href="styles/default.css" rel="stylesheet" type="text/css">
+    {BEGIN rtlCSS}
+      <LINK href="styles/defaultRTL.css" rel="stylesheet" type="text/css">
+    {END rtlCSS}
+    {BEGIN styleCSSFiles}
+      <LINK href="{$stylepath}" rel="stylesheet" type="text/css">
+    {END styleCSSFiles}
+    {BEGIN pageCSSFiles}
+      <LINK href="{$pagestylepath}" rel="stylesheet" type="text/css">
+    {END pageCSSFiles}
+    <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+  </HEAD>
+  <BODY class="{$stylename} function-login" {$bodyattrs}>
+    {BEGIN body}
+      {$header}
+      <STYLE>
+        {$containerCss}
+      </STYLE>
+      <DIV class="bs-top">
+        {BEGIN container_page}
+          <DIV class="container" data-container="page" data-pageid="{$pageid}" {$page_chiddenattr}>
+            {BEGIN container_page_1}
+              <DIV class="bs-standalone-page col-md-6 col-md-offset-3" data-container="page_1" data-pageid="{$pageid}" {$page_1_chiddenattr}>
+                {BEGIN container_panel}
+                  <DIV class="bs-pagepanel panel panel-primary" data-container="panel" data-pageid="{$pageid}" {$panel_chiddenattr}>
+                    {BEGIN container_header}
+                      <DIV class="panel-heading" data-container="header" data-pageid="{$pageid}" {$header_chiddenattr}>
+                        {BEGIN loginheader}
+                          <H3 class="panel-title" data-brick="loginheader" data-pageid="{$pageid}" {$loginheader_hiddenattr}>
+                            {$pagetitlelabel login}
+                          </H3>
+                        {END loginheader}
+                      </DIV>
+                    {END container_header}
+                    {BEGIN container_body}
+                      <DIV class="panel-body" data-container="body" data-pageid="{$pageid}" {$body_chiddenattr}>
+                        {BEGIN container_header_1}
+                          <DIV class="col-md-12" data-container="header_1" data-pageid="{$pageid}" {$header_1_chiddenattr}>
+                            {BEGIN message_block}
+                              <DIV class="alert {$message_class}" role="alert" data-brick="message" data-pageid="{$pageid}" {$message_hiddenattr}>
+                                {$message}
+                              </DIV>
+                            {END message_block}
+                          </DIV>
+                        {END container_header_1}
+                        {BEGIN container_fields}
+                          <DIV class="col-md-12" data-container="fields" data-pageid="{$pageid}" {$fields_chiddenattr}>
+                            <DIV class="form-horizontal" role="form" data-brick="loginfields" data-pageid="{$pageid}" {$loginfields_hiddenattr}>
+                              <DIV class="form-group">
+                                <LABEL class="col-md-4 control-label" for="username">
+                                  {BEGIN username_label}
+                                    Nome do Usuário:
+                                  {END username_label}
+                                </LABEL>
+                                <DIV class="col-md-6">
+                                  <INPUT name="username" class="form-control" id="username" type="text" {$username_attrs}>
+                                </DIV>
+                              </DIV>
+                              <DIV class="form-group">
+                                <LABEL class="col-md-4 control-label" for="password">
+                                  {BEGIN password_label}
+                                    Senha:
+                                  {END password_label}
+                                </LABEL>
+                                <DIV class="col-md-6">
+                                  <INPUT name="password" class="form-control" id="password" type="password" {$password_attrs}>
+                                </DIV>
+                              </DIV>
+                              <DIV class="form-group">
+                                <DIV class="col-md-6 col-md-offset-4">
+                                  <DIV class="checkbox">
+                                    <LABEL>
+                                      <INPUT type="checkbox" {$rememberbox_attrs}>
+                                      {BEGIN remember_password_label}
+                                        <SPAN>
+                                        </SPAN>
+                                      {END remember_password_label}
+                                    </LABEL>
+                                  </DIV>
+                                </DIV>
+                              </DIV>
+                            </DIV>
+                          </DIV>
+                        {END container_fields}
+                        {BEGIN container_header_2}
+                          <DIV class="col-md-8 col-md-offset-4" data-container="header_2" data-pageid="{$pageid}" {$header_2_chiddenattr}>
+                            {BEGIN loginbuttons}
+                              <BUTTON class="btn btn-primary" {$loginlink_attrs}>
+																	Login
+                              </BUTTON>
+                              {BEGIN continue_button}
+                                <BUTTON class="btn btn-primary" {$continuebutton_attrs}>
+                                  Continuar
+                                </BUTTON>
+                              {END continue_button}
+                              {BEGIN guestlink_block}
+                                <DIV class="btn btn-link">
+                                  <A {$guestlink_attrs}>
+                                    Logar como Convidado
+                                  </A>
+                                </DIV>
+                              {END guestlink_block}
+                            {END loginbuttons}
+                          </DIV>
+                        {END container_header_2}
+                      </DIV>
+                    {END container_body}
+                  </DIV>
+                {END container_panel}
+                {BEGIN container_register}
+                  <DIV class="text-center col-md-12" data-container="register" data-pageid="{$pageid}" {$register_chiddenattr}>
+                    <SPAN data-brick="bsloginregister" data-pageid="{$pageid}" {$bsloginregister_hiddenattr}>
+                    </SPAN>
+                  </DIV>
+                {END container_register}
+              </DIV>
+            {END container_page_1}
+          </DIV>
+        {END container_page}
+      </DIV>
+      <DIV class="bs-middle">
+        <DIV class="bs-topmiddle">
+        </DIV>
+        <DIV class="bs-left" {$blockattr_left}>
+        </DIV>
+        <DIV class="bs-center">
+        </DIV>
+        <DIV class="bs-right">
+        </DIV>
+      </DIV>
+      <DIV class="bs-bottom">
+      </DIV>
+      {$footer}
+    {END body}
+  </BODY>
+</HTML>

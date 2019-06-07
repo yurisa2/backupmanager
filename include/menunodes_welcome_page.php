@@ -75,7 +75,7 @@ function getMenuNodes_welcome_page($menuNodesObject)
 	
 	$menuNode["title"] = "Pings";
 
-	$menuNode["comments"] = "Lista pings do servidor";
+	$menuNode["comments"] = "Lista pings do servidor, verifica quando o servidor esta ligado.";
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;
