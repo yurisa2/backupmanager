@@ -104,14 +104,14 @@ function corpo_mail($label)
 
 <table class="table-row" width="450" bgcolor="#FFFFFF" style="table-layout: fixed; background-color: #ffffff;" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="table-row-td" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; padding-left: 36px; padding-right: 36px;" valign="top" align="left">
   <table class="table-col" align="left" width="378" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;"><tbody><tr><td class="table-col-td" width="378" style="font-family: Arial, sans-serif; line-height: 19px; color: #444444; font-size: 13px; font-weight: normal; width: 378px;" valign="top" align="left">
-    <table class="header-row" width="378" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;"><tbody><tr><td class="header-row-td" width="378" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; margin: 0px; font-size: 18px; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">ARQUIVOS NFe!</td></tr></tbody></table>
+    <table class="header-row" width="378" cellspacing="0" cellpadding="0" border="0" style="table-layout: fixed;"><tbody><tr><td class="header-row-td" width="378" style="font-family: Arial, sans-serif; font-weight: normal; line-height: 19px; color: #478fca; margin: 0px; font-size: 18px; padding-bottom: 10px; padding-top: 15px;" valign="top" align="left">NOTIFICAÇÃO DE BACKUP!</td></tr></tbody></table>
     <div style="font-family: Arial, sans-serif; line-height: 20px; color: #444444; font-size: 13px;">
-      <b style="color: #777777;">Documentos referentes à Nota Fiscal</b><BR>
+      <b style="color: #777777;">Informações referentes ao seu backup</b><BR>
       <br>
       Olá, o backup <b>'.$label.'</b> foi executado com sucesso, não esqueça de verificá-lo quando possível.<br>
-      Para ver um histórico do seus backups e se o servidor está ok, entre em<br>
-      http://sa2.com.br/backupmanager  <br>
-      Usuário e senha (inicial), identico ao seu servidor de backup. <br>
+      Para ver um histórico do seus backups e se o servidor está ok, entre em<br><br>
+      http://sa2.com.br/backupmanager  <br><br>
+      Usuário e senha (inicial), identico ao seu servidor de backup. <br><br><br>
 
       <small>Este é um e-mail meramente informativo, não garante a integridade dos dados, esta é uma atribuição do  cliente, verifique a integridade do backup com regularidade.</small>
   </td></tr></tbody></table>
