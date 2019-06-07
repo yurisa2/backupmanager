@@ -8,6 +8,4 @@ $p = "Fokalove99";
 
 $dbh = new PDO("mysql:host=$server;dbname=$u", $u, $p);
 
-
-
 ?>
