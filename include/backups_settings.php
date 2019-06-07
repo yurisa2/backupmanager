@@ -137,15 +137,14 @@ $tdatabackups[".isUseTimeForSearch"] = false;
 
 
 
-$tdatabackups[".badgeColor"] = "E07878";
+$tdatabackups[".badgeColor"] = "388E8E";
 
 
 $tdatabackups[".allSearchFields"] = array();
 $tdatabackups[".filterFields"] = array();
 $tdatabackups[".requiredSearchFields"] = array();
 
-$tdatabackups[".allSearchFields"][] = "id_bkp";
-	$tdatabackups[".allSearchFields"][] = "label";
+$tdatabackups[".allSearchFields"][] = "label";
 	$tdatabackups[".allSearchFields"][] = "date";
 	$tdatabackups[".allSearchFields"][] = "obs";
 	$tdatabackups[".allSearchFields"][] = "longdata";
@@ -256,7 +255,6 @@ $tableKeysbackups[] = "id_bkp";
 $tdatabackups[".Keys"] = $tableKeysbackups;
 
 $tdatabackups[".listFields"] = array();
-$tdatabackups[".listFields"][] = "id_bkp";
 $tdatabackups[".listFields"][] = "label";
 $tdatabackups[".listFields"][] = "date";
 $tdatabackups[".listFields"][] = "obs";
@@ -267,7 +265,6 @@ $tdatabackups[".hideMobileList"] = array();
 
 
 $tdatabackups[".viewFields"] = array();
-$tdatabackups[".viewFields"][] = "id_bkp";
 $tdatabackups[".viewFields"][] = "label";
 $tdatabackups[".viewFields"][] = "date";
 $tdatabackups[".viewFields"][] = "obs";
@@ -297,7 +294,6 @@ $tdatabackups[".inlineEditFields"][] = "longdata";
 $tdatabackups[".inlineEditFields"][] = "update";
 
 $tdatabackups[".exportFields"] = array();
-$tdatabackups[".exportFields"][] = "id_bkp";
 $tdatabackups[".exportFields"][] = "label";
 $tdatabackups[".exportFields"][] = "date";
 $tdatabackups[".exportFields"][] = "obs";
@@ -307,7 +303,6 @@ $tdatabackups[".exportFields"][] = "update";
 $tdatabackups[".importFields"] = array();
 
 $tdatabackups[".printFields"] = array();
-$tdatabackups[".printFields"][] = "id_bkp";
 $tdatabackups[".printFields"][] = "label";
 $tdatabackups[".printFields"][] = "date";
 $tdatabackups[".printFields"][] = "obs";
@@ -329,20 +324,15 @@ $tdatabackups[".printFields"][] = "update";
 
 	
 	
-		$fdata["bListPage"] = true;
-
 	
 	
 	
 	
-		$fdata["bViewPage"] = true;
-
-		$fdata["bAdvancedSearch"] = true;
-
-		$fdata["bPrinterPage"] = true;
-
-		$fdata["bExportPage"] = true;
-
+	
+	
+	
+	
+	
 		$fdata["strField"] = "id_bkp";
 
 		$fdata["isSQLExpression"] = true;
@@ -350,8 +340,7 @@ $tdatabackups[".printFields"][] = "update";
 
 	
 	
-				$fdata["FieldPermissions"] = true;
-
+			
 				$fdata["UploadFolder"] = "files";
 
 //  Begin View Formats
@@ -428,11 +417,6 @@ $tdatabackups[".printFields"][] = "update";
 
 
 
-// the field's search options settings
-	
-			// the default search options list
-				$fdata["searchOptionsList"] = array("Contains", "Equals", "Starts with", "More than", "Less than", "Between", "Empty");
-// the end of search options settings
 
 
 

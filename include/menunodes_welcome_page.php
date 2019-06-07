@@ -43,14 +43,14 @@ function getMenuNodes_welcome_page($menuNodesObject)
 	$menuNode["pageType"] = "List";//
 	$menuNode["openType"] = "None";
 	
-	$menuNode["icon"] = "glyphicon-shopping-cart";
+	$menuNode["icon"] = "glyphicon-folder-open";
 	$menuNode["iconType"] = "2";
 
-			$menuNode["color"] = "#"."E07878";
+			$menuNode["color"] = "#"."388E8E";
 	
 	$menuNode["title"] = "Backups";
 
-	$menuNode["comments"] = "Backups description";
+	$menuNode["comments"] = "Lista/Logs de backups";
 
 
 	$menuNodesObject->menuNodes["welcome_page"][] = $menuNode;

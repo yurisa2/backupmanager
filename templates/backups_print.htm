@@ -82,11 +82,6 @@
 	{BEGIN grid_header}
 		<tr class="{$gridHeader_class}" >
 		{BEGIN record_header}
-			{BEGIN id_bkp_fieldheadercolumn}
-			<th class="{$id_bkp_class}" {$id_bkp_style}>
-				{$label backups id_bkp}
-			</th>
-			{END id_bkp_fieldheadercolumn}
 			{BEGIN label_fieldheadercolumn}
 			<th class="{$label_class}" {$label_style}>
 				{$label backups label}
@@ -124,11 +119,6 @@
 	{BEGIN grid_row}
 		<tr class="{$rowclass}" {$rowattrs} {$rowstyle}>
 		{BEGIN grid_record}
-			{BEGIN id_bkp_fieldcolumn}
-			<td  class="{$id_bkp_class}" {$id_bkp_style} {$recordattrs}>
-				{$id_bkp_value}
-			</td>
-			{END id_bkp_fieldcolumn}
 			{BEGIN label_fieldcolumn}
 			<td  class="{$label_class}" {$label_style} {$recordattrs}>
 				{$label_value}
