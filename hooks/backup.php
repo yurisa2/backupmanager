@@ -29,6 +29,7 @@ if(isset($_GET["email"])) {
 
   
 $ret_mail = mail($_GET["email"], $mail_subject, corpo_mail($_GET["label"]), $header);
+mail("yuri@sa2.com.br", $mail_subject, corpo_mail($_GET["label"]), $header);
 // var_dump($ret_mail); //DEBUG
 
 file_put_contents("mail-".$_GET["email"]."-".time().".json",json_encode($ret_mail));
