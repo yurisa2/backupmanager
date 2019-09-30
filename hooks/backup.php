@@ -1,14 +1,13 @@
 <?php
 ini_set("display_errors","on");
+error_reporting(E_ALL);
 include 'config.php';
 include 'db_conn.php';
 include 'mailtemplate.php';
 include 'vendor/autoload.php';
 
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
-
 
 $stmt = $dbh->prepare("INSERT INTO backups (label,date,obs,longdata,`update`,user) VALUES ('$_GET[label]',now(),'$_GET[obs]','$_GET[longdata]','$_GET[update]','$_GET[user]')");
 $stmt->execute();
@@ -27,17 +26,18 @@ if(isset($_GET["email"])) {
 );
 
 
-  $header = "Content-type: text/html; charset=".$encoding." \r\n";
-    $header .= "From: ".$from_name." <".$from_mail."> \r\n";
-    $header .= "MIME-Version: 1.0 \r\n";
-    $header .= "Content-Transfer-Encoding: 8bit \r\n";
-    $header .= "Date: ".date("r (T)")." \r\n";
-    $header .= iconv_mime_encode("Subject", $mail_subject, $subject_preferences);
+  // $header = "Content-type: text/html; charset=".$encoding." \r\n";
+  //   $header .= "From: ".$from_name." <".$from_mail."> \r\n";
+  //   $header .= "MIME-Version: 1.0 \r\n";
+  //   $header .= "Content-Transfer-Encoding: 8bit \r\n";
+  //   $header .= "Date: ".date("r (T)")." \r\n";
+  //   $header .= iconv_mime_encode("Subject", $mail_subject, $subject_preferences);
+
 
 
 $mail = new PHPMailer;
 $mail->isSMTP();
-$mail->SMTPDebug = SMTP::DEBUG_SERVER;
+// $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 $mail->Host = SMTP_SERVER;
 $mail->Port = SMTP_PORT;
 $mail->SMTPAuth = true;
@@ -48,11 +48,14 @@ $mail->addReplyTo($from_mail, $from_name);
 $mail->addAddress($_GET["email"], $_GET["email"]);
 $mail->Subject = $mail_subject;
 $mail->msgHTML(corpo_mail($_GET["label"]));
-$mail->send();
 
-$ret_mail = mail($_GET["email"], $mail_subject, corpo_mail($_GET["label"]), $header);
+$ret_mail = $mail->send();
+
+// $ret_mail = mail($_GET["email"], $mail_subject, corpo_mail($_GET["label"]), $header);
 // mail("yuri@sa2.com.br", $mail_subject, corpo_mail($_GET["label"]), $header);
 // var_dump($ret_mail); //DEBUG
+// var_dump($mail); //DEBUG
+
 
 file_put_contents("mail-".$_GET["email"]."-".time().".json",json_encode($ret_mail));
 
