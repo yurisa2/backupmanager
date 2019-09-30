@@ -1,11 +1,8 @@
 <?php
 ini_set("display_errors","on");
 
-$server = "backupmanager.mysql.dbaas.com.br";
 
-$u = "backupmanager";
-$p = "Fokalove99";
 
-$dbh = new PDO("mysql:host=$server;dbname=$u", $u, $p);
+$dbh = new PDO("mysql:host=".MYSQL_SERVER.";dbname=".MYSQL_USER."", MYSQL_USER, MYSQL_PASSWORD);
 
 ?>
