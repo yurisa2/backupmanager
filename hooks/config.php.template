@@ -1,0 +1,25 @@
+<?php
+
+$server = "";
+
+$u = ""; //MYSQL Username
+$p = ""; // MYSQL PASSWORD
+
+
+$smtp_server = ''; //HOST FOR SMTP
+$smtp_port = '587';  //PORT
+$smtp_user = ''; //SMTP USERNAME
+$smtp_pass = '';  //SMTP PASSWD
+
+define('MYSQL_SERVER',$server);
+define('MYSQL_USER',$u);
+define('MYSQL_PASSWORD',$p);
+
+define('SMTP_SERVER',$smtp_server);
+define('SMTP_PORT',$smtp_port);
+define('SMTP_USER',$smtp_user);
+define('SMTP_PASS',$smtp_pass);
+
+
+
+ ?>
